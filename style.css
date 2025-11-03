@@ -1,0 +1,56 @@
+body {
+    font-family: 'Roboto', sans-serif;
+}
+
+.hero .title {
+    font-weight: 700;
+}
+
+video {
+    width: 100%;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+}
+
+.hero-carousel {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.comparison-row {
+    margin-bottom: 3rem;
+    padding: 1.5rem;
+    border-radius: 12px;
+    transition: background-color 0.3s ease;
+    border: 1px solid #dbdbdb;
+}
+
+.comparison-row:hover {
+    background-color: #fafafa; /* Lighter grey background on hover */
+    border-color: #b5b5b5;
+}
+
+#prompt-display {
+    margin: 1.5rem auto;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: #eff5fb;
+    color: #296fa8;
+    border-radius: 8px;
+}
+
+.bulma-slider .jux-before:after, .bulma-slider .jux-after:after {
+    display: none; /* Hide the default 'before'/'after' text from the slider */
+}
+
+footer {
+    padding: 3rem 1.5rem;
+}
+
+.logo {
+    width: 120px;
+    height: auto;
+    border-radius: 50%;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    display: block;
+    margin: 20px auto;
+  }
