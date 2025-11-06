@@ -384,31 +384,27 @@
             
             <h1 class="title is-3 publication-title">
               <img src="./static/images/logo.png" alt="Logo" style="height: 1.5em; vertical-align: middle; margin-right: 8px;">
-              NAUTILUS: Large Vision-Language Model for Underwater Scene Understanding</h1>
+              NAUTILUS: A Large Multimodal Model for Underwater Scene Understanding</h1>
             <div class="is-size-5 publication-authors">
               <span class="author-block">
-                <a href=https://lmd0311.github.io/ target="_blank" rel="noopener noreferrer">Wei
-                  Xu</a><sup>1*</sup>,</span>
+                Wei Xu<sup>1*</sup>,</span>
               <span class="author-block">
-                <a href="https://dk-liang.github.io/" target="_blank" rel="noopener noreferrer">Cheng Wang</a><sup>1*</sup>,</span>
+                Cheng Wang<sup>1*</sup>,</span>
               <span class="author-block">
-                <a href="#" target="_blank" rel="noopener noreferrer">Dingkang
-                  Liang</a><sup>1</sup>,</span>
+                Dingkang Liang<sup>1</sup>,</span>
               <span class="author-block">
-                <a href="#" target="_blank" rel="noopener noreferrer">Zongchuang Zhao</a><sup>1</sup>,</span>
+                Zongchuang Zhao<sup>1</sup>,</span>
               <span class="author-block">
-                <a href="https://scholar.google.com/citations?user=PVMQa-IAAAAJ&hl=en" target="_blank"
-                  rel="noopener noreferrer">Xingyu Jiang</a><sup>1</sup>,</span>
+                Xingyu Jiang<sup>1</sup>,</span>
               <span class="author-block">
-                <a href="#" target="_blank" rel="noopener noreferrer">Peng Zhang</a><sup>2</sup>,</span>
+                Peng Zhang<sup>2</sup>,</span>
               <span class="author-block">
-                <a href="https://scholar.google.com/citations?user=UeltiQ4AAAAJ&hl=en" target="_blank"
-                  rel="noopener noreferrer">Xiang Bai</a><sup>1†</sup></span>
+                Xiang Bai<sup>1†</sup></span>
             </div>
 
             <div class="is-size-5 publication-authors">
               <span class="author-block"><sup>1</sup>Huazhong University of Science and Technology,</span>
-              <span class="author-block"><sup>2</sup>University of xxx</span>
+              <span class="author-block"><sup>2</sup>National University of Defense Technology</span>
             </div>
 
             <div class="is-size-5 publication-authors">
@@ -419,7 +415,7 @@
             <div class="column has-text-centered">
               <div class="publication-links">
                 <span class="link-block">
-                  <a href="link to paper" class="external-link button is-normal is-rounded is-dark" target="_blank"
+                  <a href="https://arxiv.org/abs/2510.27481" class="external-link button is-normal is-rounded is-dark" target="_blank"
                     rel="noopener noreferrer">
                     <span class="icon">
                       <i class="fas fa-file-pdf"></i>
@@ -428,12 +424,21 @@
                   </a>
                 </span>
                 <span class="link-block">
-                  <a href="https://github.com/Chengnotwang/NAUTILUS"
+                  <a href="https://github.com/H-EmbodVis/NAUTILUS"
                     class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener noreferrer">
                     <span class="icon">
                       <i class="fab fa-github"></i>
                     </span>
                     <span>Code</span>
+                  </a>
+                </span>
+                <span class="link-block">
+                  <a href="https://github.com/H-EmbodVis/NAUTILUS/tree/dataset?tab=readme-ov-file"
+                    class="external-link button is-normal is-rounded is-dark" target="_blank" rel="noopener noreferrer">
+                    <span class="icon">
+                      <i class="fas fa-database"></i>
+                    </span>
+                    <span>Dataset</span>
                   </a>
                 </span>
               </div>
@@ -451,19 +456,21 @@
           <h2 class="title is-3">Abstract</h2>
           <div class="content has-text-justified" style="line-height: 1.5;">
             <p>
-              Underwater exploration offers critical insights into our planet and attracts increasing attention for its broader 
-              applications in resource exploration, national security, etc. We study the underwater scene understanding methods, 
-              which aim to achieve automated underwater exploration. The underwater scene understanding task demands multi-task 
-              perceptions from multiple granularities. However, the absence of large-scale underwater multi-task instruction-tuning 
-              datasets hinders the progress of this research. To bridge this gap, we construct NautData, a dataset containing 1.45 M 
-              image-text pairs supporting eight underwater scene understanding tasks. It enables the development and thorough 
-              evaluations of the underwater scene understanding models. Underwater image degradation is a widely recognized challenge 
-              that interferes with underwater tasks. To improve the robustness of underwater scene understanding, we introduce 
-              physical priors derived from underwater imaging models and propose a plug-and-play vision feature enhancement (VFE) 
-              module, which explicitly restores clear underwater information. We integrate this module into renowned baselines 
-              LLaVA-1.5 and Qwen2.5-VL and build our underwater LMM, NAUTILUS. Experiments conducted on the NautData and public 
-              underwater datasets demonstrate the effectiveness of the VFE model, consistently improving the performance of both 
-              baselines on most supported tasks, thus ensuring the superiority of NAUTILUS across the majority of tasks.
+              Underwater exploration offers critical insights into our planet and attracts increasing attention 
+              for its broader applications in resource exploration, national security, etc. We study the underwater 
+              scene understanding methods, which aim to achieve automated underwater exploration. The underwater 
+              scene understanding task demands multi-task perceptions from multiple granularities. However, the 
+              absence of large-scale underwater multi-task instruction-tuning datasets hinders the progress of 
+              this research. To bridge this gap, we construct NautData, a dataset containing 1.45 M image-text 
+              pairs supporting eight underwater scene understanding tasks. It enables the development and thorough 
+              evaluation of the underwater scene understanding models. Underwater image degradation is a widely 
+              recognized challenge that interferes with underwater tasks. To improve the robustness of underwater 
+              scene understanding, we introduce physical priors derived from underwater imaging models and propose 
+              a plug-and-play vision feature enhancement (VFE) module, which explicitly restores clear underwater 
+              information. We integrate this module into renowned baselines LLaVA-1.5 and Qwen2.5-VL and build our 
+              underwater LMM, NAUTILUS. Experiments conducted on the NautData and public underwater datasets demonstrate 
+              the effectiveness of the VFE module, consistently improving the performance of both baselines on the 
+              majority of supported tasks, thus ensuring the superiority of NAUTILUS in the underwater scene understanding area.
             </p>
           </div>
         </div>
@@ -665,8 +672,7 @@
         NautData: Underwater Multimodal Instrucion-Following Data </h2>
       <p class="content has-text-justified">
         NautData is a large-scale underwater multimodal instruction-following dataset. It contains 1.45 million image-text
-        pairs, which are annotated with eight underwater scene understanding tasks. NautData also have a test set which is designed to evaluate the
-        performance of underwater scene understanding models.
+        pairs, which are annotated with eight underwater scene understanding tasks.
       </p>
       <br>
       <!-- Single Video Display -->
@@ -680,7 +686,7 @@
               </figure>
             </div>
             <div class="caption">
-              <p class="is-size-5 has-text-grey-dark" style="font-style: italic;">Dataset Distribution of NautData.</p>
+              <p class="is-size-5 has-text-grey-dark" >Dataset Distribution of NautData.</p>
             </div>
           </div>
 
@@ -691,7 +697,7 @@
               </figure>
             </div>
             <div class="caption">
-              <p class="is-size-5 has-text-grey-dark" style="font-style: italic;">Image Distribution of NautData.</p>
+              <p class="is-size-5 has-text-grey-dark" >Image Distribution of NautData.</p>
             </div>
 
           </div>
@@ -700,16 +706,19 @@
 
       </div>
       <p class="content has-text-justified">
-        The instruction chat dialogues for the NautData dataset were generated using a combination of the Gemini, 
-        GPT-4o, and Qwen2.5-VL-72B models. A comprehensive description of this methodology can be found in our paper.
+        Illustration of the data construction framework. Eight tasks are involved, and the data 
+        generation process is tailored to each task. Rule-based generation utilizes predefined templates 
+        to generate question-answer pairs. Integration generation integrates question-answer pairs using 
+        both templates and outputs from LMMs. Free-form generation enables LMMs to construct questions 
+        and answers based on the content they focus on.
       </p>
       <div class="columns is-centered">
         <figure class="figure-card">
-          <img src="./static/images/Dataengine.png" alt="Dataengine of NAUTILUS"></img>
+          <img src="./static/images/Dataengine.png" alt="Dataengine of NautData"></img>
         </figure>
       </div>
       <div class="has-text-centered" style="margin-top: 1rem;">
-        <p class="is-size-5 has-text-grey-dark" style="font-style: italic;">Dataengine of NAUTILUS.</p>
+        <p class="is-size-5 has-text-grey-dark">Dataengine of NautData.</p>
       </div>
     </div>
   </section>
@@ -745,10 +754,6 @@
       <h2 class="title is-3 has-text-centered">
         <img src="./static/images/light-bulb.png" alt="Pipeline" style="height: 1.5em; vertical-align: middle; margin-right: 8px;">
         Enhancing Underwater Understanding via the VFE Module</h2>
-      <p style="margin-bottom: 1.5rem;">
-        We propose an underwater visual enhancement module that utilizes physical model priors. This module is 
-        subsequently integrated with both Qwen2.5-VL and LLaVA, and the resulting unified framework demonstrates 
-        powerful performance capabilities. </p>
       <div class="columns is-multiline is-centered" style="margin-top: 1.5rem;">
         <div class="columns is-centered">
           <figure class="figure-card">
@@ -756,7 +761,7 @@
           </figure>
         </div>
         <div class="has-text-centered" style="margin-top: 1rem;">
-          <p class="is-size-5 has-text-grey-dark" style="font-style: italic;">Framework of NAUTILUS.</p>
+          <p class="is-size-5 has-text-grey-dark" >Framework of NAUTILUS.</p>
         </div>
         
         <div class="columns is-centered">
@@ -766,7 +771,7 @@
         </div>
         
         <div class="has-text-centered" style="margin-top: 1rem;">
-          <p class="is-size-5 has-text-grey-dark" style="font-style: italic;">Detailed Structure of the Proposed VFE Module. </p>
+          <p class="is-size-5 has-text-grey-dark" >Detailed Structure of the Proposed VFE Module. </p>
         </div>
       </div>
     </div>
@@ -784,22 +789,31 @@
         </figure>
       </div>
       <div class="has-text-centered" style="margin-top: 1rem;">
-        <p class="is-size-5 has-text-grey-dark" style="font-style: italic;">The comparison of our NAUTILUS and renowned LMMs on the NautData test set. The best
+        <p class="is-size-5 has-text-grey-dark" >The comparison of our NAUTILUS and renowned LMMs on the NautData test set. The best
           results are highlighted in bold,and the second-best results are underscored.</p>
       </div>
+
+      <div class="columns is-centered">
+        <figure class="figure-card">
+          <img src="./static/images/Visualization.png" alt="Visualization."></img>
+        </figure>
+      </div>
+      <div class="has-text-centered" style="margin-top: 1rem;">
+        <p class="is-size-5 has-text-grey-dark" >Visualization of NAUTILUS.</p>
+      </div>
     </div>
-  </section>  
+  </section>
 
 
   <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
       <h2 class="title">BibTeX</h2>
-      <pre><code>@article{xu2025nautilus,
-  title={NAUTILUS: Large Vision-Language Model for Underwater Scene Understanding},
-  author={Xu, Wei and Wang, Cheng and Liang, Dingkang and Zhao, Zongchuang and Jiang, Xinyu and Zhang, Peng and Bai, Xiang},
-  journal={arXiv preprint arXiv:xxxxxxxxx},
-  year={2025}
-}</code></pre>
+      <pre><code>@inproceedings{xu2025nautilus,
+        title={NAUTILUS: A Large Multimodal Model for Underwater Scene Understanding},
+        author={Xu, Wei and Wang, Cheng and Liang, Dingkang and Zhao, Zongchuang and Jiang, Xingyu and Zhang, Peng and Bai, Xiang},
+        booktitle={Advances in Neural Information Processing Systems},
+        year={2025}
+  }</code></pre>
     </div>
   </section>
 
@@ -883,5 +897,11 @@
   </script>
 
 </body>
+
+<div style="text-align: center;">
+  <a href="https://www.versicherungen.at/">Versicherungen online berechnen & abschließen</a >
+  <script type="text/javascript" src="https://www.freevisitorcounters.com/auth.php?id=6d42aa134987fd9b52b242bfd7831d0cf984925d"></script>
+  <script type="text/javascript" src="https://www.freevisitorcounters.com/en/home/counter/1431717/t/5"></script>
+</div>
 
 </html>
