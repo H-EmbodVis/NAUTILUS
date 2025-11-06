@@ -7,7 +7,6 @@ import shortuuid
 import sys
 from pathlib import Path
 
-# 当前文件路径
 current_file = Path(__file__)
 parent_dir = current_file.parent.parent
 model_dir = parent_dir / "LLaVA"

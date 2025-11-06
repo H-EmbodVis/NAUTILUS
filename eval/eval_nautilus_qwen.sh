@@ -14,5 +14,6 @@ python ./Eval/eval4nautilus_qwen.py \
 # python ./Eval/eval4nautilus_qwen.py \
 #     --data-path "nautdata_images" \
 #     --metric-folder "metric saving directory" \
-#     --benchmark-json ""nautilus-qwen-instruct-test.json" \
+#     --benchmark-json "nautilus-qwen-instruct-test.json" \
+#     --use-predictions \
 #     --prediction-json "prediction.json"
