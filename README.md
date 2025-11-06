@@ -1,9 +1,11 @@
 
 # NautData
-We construct **NautData**, a large-scale underwater instruction-following dataset containing 1.45 M image-text pairs, enabling developments and evaluations of underwater LMMs. 
+[![Huggingface](https://img.shields.io/badge/NautData-Data-orange?logo=Huggingface)](https://huggingface.co/datasets/H-EmbodVis/NautData/tree/main)
+
+We construct **NautData**, a large-scale underwater instruction-following dataset containing 1.45 M image-text pairs, enabling developments and evaluations of underwater MLLMs. 
 
 <p align="center">
-    <img src="../Figs/Table1.png" width="90%"/>
+    <img src="./Figs/Table1.png" width="90%"/>
 <p> 
 
 ## Key features
@@ -13,13 +15,23 @@ We construct **NautData**, a large-scale underwater instruction-following datase
 
 ## Distribution of NautData
 <p align="center">
-    <img src="../Figs/Distribution.png" width="90%"/>
+    <img src="./Figs/Distribution.png" width="90%"/>
 <p>  
 
 ## Data engine
 <p align="center">
-    <img src="../Figs/Dataengine.png" width="90%"/>
-<p> 
+    <img src="./Figs/Dataengine.png" width="90%"/>
+<p>
+
+## Download
+1. To facilitate quick access, the processed images are made available [here](https://huggingface.co/datasets/H-EmbodVis/NautData/tree/main).
+2. You can also follow the detailed instructions in `./Images/*/readme.md` to prepare the NautData images. Additionally, a representative subset of images from each dataset is provided to facilitate a quick understanding of **NautData**.
+
+## Visualization
+
+<p align="center">
+  <img src="./Figs/Visualization.png" width="90%"/>
+<p>
 
 ## Task and chat Data format
 NautData includes eight tasks covering understanding at three granularities: image-, region-, and object-levels.  
@@ -48,7 +60,7 @@ NautData includes eight tasks covering understanding at three granularities: ima
     "conversations": [
       {
         "from": "human",
-        "value": "<image>\nPlease give a brief description of the region [bbox] in this underwater image." # [bbox] is pixel coordinate from dataset annotations 
+        "value": "<image>\nPlease give a brief description of the region [bbox] in this underwater image." # [bbox] is pixel coordinate when applying Nautilus(Qwen), and [bbox] is normalized coordinate when applying Nautilus(LLaVA)
       },
       {
         "from": "gpt",
@@ -59,23 +71,40 @@ NautData includes eight tasks covering understanding at three granularities: ima
 ```
 ### Grounding data
 ```
+<!-- LLaVA format -->
   {
     "id": "2",
     "image": "path/to/image.jpg",
     "conversations": [
       {
         "from": "human",
-        "value": "<image>\nPlease locate the bounding box coordinates of the region [Region caption]" 
+        "value": "<image>\nPlease locate the bounding box coordinates of the region [Region caption]." 
       },
       {
         "from": "gpt",
-        "value": "bbox" 
+        "value": "bbox" # Normalized coordinate
+      }
+    ]
+  },
+<!-- Qwen2.5 format -->
+  {
+    "id": "2",
+    "image": "path/to/image.jpg",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nPlease locate the bounding box coordinates of the region [Region caption] in json format." 
+      },
+      {
+        "from": "gpt",
+        "value": "{\n\"bbox_2d\": [x1, y1, x2, y2]\n}" # Pixel coordinate
       }
     ]
   },
 ```
 ### Detection data
 ```
+<!-- LLaVA format -->
   {
     "id": "3",
     "image": "path/to/image.jpg",
@@ -90,6 +119,21 @@ NautData includes eight tasks covering understanding at three granularities: ima
       }
     ]
   },
+<!-- Qwen2.5 format -->
+  {
+    "id": "3",
+    "image": "path/to/image.jpg",
+    "conversations": [
+      {
+        "from": "human",
+        "value": "<image>\nDetect all underwater object in the image, including class1, class2, ..., classN. Provide the category and regression box for each detected object." 
+      },
+      {
+        "from": "gpt",
+        "value": "{\"bbox_2d\": [bbox1], \"label\": \"lable 1\"}, ... \n{\"bbox_2d\": [bboxM], \"label\": \"label M\"}" 
+      }
+    ]
+  },
 ```
 ### Refering object classification data
 ```
@@ -99,7 +143,7 @@ NautData includes eight tasks covering understanding at three granularities: ima
     "conversations": [
       {
         "from": "human",
-        "value": "<image>\nClassify the object located inside the provided regression box [bbox]. Choose one of the following categories as the answer:class1, class2, ..., classN." 
+        "value": "<image>\nClassify the object located inside the provided regression box [bbox]. Choose one of the following categories as the answer:class1, class2, ..., classN." # [bbox] is pixel coordinate when applying Nautilus(Qwen), and [bbox] is normalized coordinate when applying Nautilus(LLaVA)
       },
       {
         "from": "gpt",
@@ -184,14 +228,17 @@ Regression data:
     └──UVOT-400
       ├── ...
 ```
-Please note that certain datasets must be renamed in accordance with the specified names above. For detailed instructions on how to download each dataset and their respective directory structures, please refer to the comprehensive guidelines provided in Nautdata.  
-We also provide a subset of images from each dataset to facilitate a quick understanding of our **NautData**.
+## Citation
 
-## Visualization
-
-<p align="center">
-  <img src="../Figs/Visualization.png" width="400"/>
-<p>
+If you find this repository useful in your research, please consider giving a star ⭐ and a citation.
+```bibtex
+@inproceedings{xu2025nautilus,
+        title={NAUTILUS: A Large Multimodal Model for Underwater Scene Understanding},
+        author={Xu, Wei and Wang, Cheng and Liang, Dingkang and Zhao, Zongchuang and Jiang, Xingyu and Zhang, Peng and Bai, Xiang},
+        booktitle={Advances in Neural Information Processing Systems},
+        year={2025}
+  }
+```
 
 
 
