@@ -169,8 +169,11 @@ class DinoVisionTransformer(nn.Module):
 
         # self.init_weights()
     
-    def load_model(self,checkpoint):
-        self.load_state_dict(torch.load(checkpoint))
+    def load_model(self,checkpoint, device=None):
+        if device:
+            self.load_state_dict(torch.load(checkpoint, map_location=device))
+        else:
+            self.load_state_dict(torch.load(checkpoint))
         print("DINOv2 Successfully Loaded")
 
     def init_weights(self):

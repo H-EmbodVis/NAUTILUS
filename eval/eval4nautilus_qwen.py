@@ -15,25 +15,8 @@ from qwenvl.nautilus_model.Qwen2_5_VL_Nautilus_ForConditionalGeneration import Q
 from qwen_vl_utils import process_vision_info
 from transformers import AutoProcessor
 
-from Evaluation_pack.classification import evaluate_classification_metrics 
-from Evaluation_pack.count import evaluate_count_metrics
-from Evaluation_pack.detection import evaluate_detection_metrics
-from Evaluation_pack.grounding import evaluate_ground_metrics
-from Evaluation_pack.text import evaluate_text_metrics
-
-from utils import get_grid_thw, sortbyid, scale_bboxes_in_text, double_image_tokens, image_token_id
-
-Metric_method_dict = {
-    "Counting":evaluate_count_metrics,
-    "Detection":evaluate_detection_metrics,
-    "Fishnet_Classification":evaluate_classification_metrics,
-    "Grounding":evaluate_ground_metrics,
-    "Image_caption":evaluate_text_metrics,
-    "VQA":evaluate_text_metrics,
-    "Region_caption":evaluate_text_metrics,
-    "Region_Classification":evaluate_classification_metrics,
-    "Zero_shot_Grounding":evaluate_ground_metrics
-}
+from utils import (get_grid_thw, sortbyid, scale_bboxes_in_text, double_image_tokens, image_token_id, Metric_method_dict, 
+    evaluate_classification_metrics, evaluate_count_metrics,evaluate_detection_metrics, evaluate_ground_metrics, evaluate_text_metrics)
 
 def eval_with_predictions(prediction_json, questions):
     ans_list = json.load(open(prediction_json, "r"))

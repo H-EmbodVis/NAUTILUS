@@ -1,7 +1,24 @@
 import re
 import torch
-import json
 from PIL import Image
+
+from Evaluation_pack.classification import evaluate_classification_metrics 
+from Evaluation_pack.count import evaluate_count_metrics
+from Evaluation_pack.detection import evaluate_detection_metrics
+from Evaluation_pack.grounding import evaluate_ground_metrics
+from Evaluation_pack.text import evaluate_text_metrics
+
+Metric_method_dict = {
+    "Counting":evaluate_count_metrics,
+    "Detection":evaluate_detection_metrics,
+    "Fishnet_Classification":evaluate_classification_metrics,
+    "Grounding":evaluate_ground_metrics,
+    "Image_caption":evaluate_text_metrics,
+    "VQA":evaluate_text_metrics,
+    "Region_caption":evaluate_text_metrics,
+    "Region_Classification":evaluate_classification_metrics,
+    "Zero_shot_Grounding":evaluate_ground_metrics
+}
 
 image_token_id = 151655
 task_tags = {"Image_caption":"0","Grounding":"1","Region_caption":"2","VQA":"3","Fishnet_Classification":"4","Detection":"5","Counting":"6","Region_Classification":"7"}

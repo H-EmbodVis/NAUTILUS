@@ -21,26 +21,8 @@ from llava.mm_utils import tokenizer_image_token, process_images, get_model_name
 from PIL import Image
 import math
 
-
-from Evaluation_pack.classification import evaluate_classification_metrics 
-from Evaluation_pack.count import evaluate_count_metrics
-from Evaluation_pack.detection import evaluate_detection_metrics
-from Evaluation_pack.grounding import evaluate_ground_metrics
-from Evaluation_pack.text import evaluate_text_metrics
-
-from utils import sortbyid
-
-Metric_method_dict = {
-    "Counting":evaluate_count_metrics,
-    "Detection":evaluate_detection_metrics,
-    "Fishnet_Classification":evaluate_classification_metrics,
-    "Grounding":evaluate_ground_metrics,
-    "Image_caption":evaluate_text_metrics,
-    "VQA":evaluate_text_metrics,
-    "Region_caption":evaluate_text_metrics,
-    "Region_Classification":evaluate_classification_metrics,
-    "Zero_shot_Grounding":evaluate_ground_metrics
-}
+from utils import (sortbyid, Metric_method_dict, evaluate_classification_metrics, evaluate_count_metrics,
+    evaluate_detection_metrics, evaluate_ground_metrics, evaluate_text_metrics)
 
 def expand2square(pil_img, background_color):
     width, height = pil_img.size

@@ -17,7 +17,7 @@ image_folder="Nautdata"
 nautilus_lr=2e-6
 
 # Use include to select gpus, e.g. --include localhost:0,1,2,3
-include="localhost:0,1,2,3"
+# include="localhost:0,1,2,3"
 output_dir="./checkpoints/nautilus_llava_sft"
 
 # Launch training

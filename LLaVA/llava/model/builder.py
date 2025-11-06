@@ -121,7 +121,8 @@ def load_pretrained_model(model_path, model_base, model_name, args,load_8bit=Fal
                 )
                 # load dino 权重,
                 assert getattr(args,"dinov2_weight",False),"Dinov2 Checkpoint not Specified!"
-                model.get_model().nautilus_encoder.load_model(args.dinov2_weight)
+                device = next(model.parameters()).device
+                model.get_model().nautilus_encoder.load_model(args.dinov2_weight, device)
     else:
         # Load language model
         if model_base is not None:
